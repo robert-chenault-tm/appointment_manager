@@ -1,0 +1,13 @@
+The application uses a MySQL database.
+In the chenaurj.appointment_manager.config package, the JdbcConfig class contains the connection info.
+Change the setUrl, setUsername, and setPassword methods to take in the appropriate connection info for the database you will be using.
+
+The application only needs one table in the database which can be created with the following SQL:
+CREATE TABLE `appointment` (
+  `id` varchar(36) NOT NULL,
+  `time` datetime NOT NULL,
+  `description` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+)
+
+Put the application on a server and browse to localhost:portnumber/appointment_manager, for example localhost:8080/appointment_manager when using a tomcat server with default settings. 

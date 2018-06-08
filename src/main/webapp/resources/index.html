@@ -1,0 +1,36 @@
+<html>
+<head>
+	<link rel="stylesheet" href="resources/css/jquery-ui.min.css">
+	<link rel="stylesheet" href="resources/css/jquery-ui.structure.min.css">
+	<link rel="stylesheet" href="resources/css/jquery-ui.theme.min.css">
+	<link rel="stylesheet" href="resources/css/bootstrap.min.css">
+	<link rel="stylesheet" href="resources/css/Appointment.css">
+</head>
+<body>
+	<div class="mt-2 ml-2">
+		<div id="errorMsgContainer"></div>
+		<button id="newButton" class="mb-1" type="button" onclick="showNewAppointmentForm()">New</button>
+		<form id="newAppointmentForm" onsubmit="createNewAppointment()">
+			<button type="button" class="mb-1" onclick="validateNewAppointmentForm()">Add</button>
+			<button type="button" class="mb-1" onclick="hideNewAppointmentForm()">Cancel</button>
+			<fieldset>
+				<label class="d-block">Date: <input type="text" id="newDate" /></label>
+				<label class="d-block">Time: <input type="text" id="newTime" /></label>
+				<label class="d-block">Description: <input type="text" id="newDesc" /></label>
+				
+			</fieldset>
+		</form>
+		<div class="d-block">
+			<input id="searchTerms" />
+			<button type="button" class="mb-1" onclick="getAppointments()">Search</button>
+		</div>
+		<table id="resultsTable" class="table table-striped"></table>
+	</div>
+
+	<script src="resources/js/jquery-3.3.1.min.js"></script>
+	<script src="resources/js/jquery-ui.min.js"></script>
+	<script src="resources/js/bootstrap.min.js"></script>
+	<script src="resources/js/moment.js"></script>
+	<script src="resources/js/AppointmentLogic.js"></script>
+</body>
+</html>
