@@ -133,11 +133,14 @@ function createNewAppointment() {
 	
 	$.ajax({
 		url: 'http://localhost:8080/appointment_manager/createAppointment',
-		data: {
+		contentType: 'application/json',
+		data: JSON.stringify({
+				id: '-1',
 				description: newDesc,
 				date: newDate,
 				time: newTime
-		},
+		}),
+		processData: false,
 		method: 'POST'
 	});
 }

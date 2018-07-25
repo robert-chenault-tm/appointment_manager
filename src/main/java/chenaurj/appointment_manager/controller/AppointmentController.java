@@ -1,10 +1,9 @@
 package chenaurj.appointment_manager.controller;
 
-import java.sql.Date;
-import java.sql.Time;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -25,8 +24,8 @@ public class AppointmentController {
 	}
 	
 	@RequestMapping(value = "/createAppointment", method = RequestMethod.POST)
-	public void createAppointment(@RequestParam(value = "description") String description, @RequestParam(value = "date") Date date, @RequestParam(value = "time") Time time) {
-		appointmentService.createAppointment(description, date, time);
+	public void createAppointment(@RequestBody Appointment appointment) {
+		appointmentService.createAppointment(appointment);
 	}
 	
 }

@@ -1,7 +1,5 @@
 package chenaurj.appointment_manager.service;
 
-import java.sql.Date;
-import java.sql.Time;
 import java.util.List;
 import java.util.UUID;
 
@@ -22,13 +20,10 @@ public class AppointmentService {
 		return appointmentRepository.getAppointments(filter);
 	}
 
-	public void createAppointment(String description, Date date, Time time) {
-		Appointment appointment = new Appointment();
+	public void createAppointment(Appointment appointment) {
 		appointment.setId(UUID.randomUUID().toString());
-		appointment.setDate(date);
-		appointment.setTime(time);
-		appointment.setDescription(description);
 		appointmentRepository.createAppointment(appointment);
+		
 	}
 
 }
